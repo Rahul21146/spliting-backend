@@ -11,7 +11,10 @@ const { cloudinaryConnect } = require("./config/cloudnary");
 const app = express();
 
 app.use(express.json());
-app.use(cors({ origin: `http://localhost:3000` }));
+// Allow the frontend origin to be configured via `FRONTEND_URL` in the environment.
+// Useful when backend is deployed separately (Render) and frontend is on Vercel or similar.
+const frontendOrigin = process.env.FRONTEND_URL || "http://localhost:3000";
+app.use(cors({ origin: frontendOrigin }));
 app.use(fileUpload({ useTempFiles: true, tempFileDir: '/tmp/' }));
 
 // Now require routes/controllers (models & associations are already registered when database/init was required above)
