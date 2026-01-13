@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 // Allow the frontend origin to be configured via `FRONTEND_URL` in the environment.
 // Useful when backend is deployed separately (Render) and frontend is on Vercel or similar.
-const frontendOrigin = process.env.FRONTEND_URL || "https://spliting-backend-q4f7.vercel.app/";
+const frontendOrigin = process.env.FRONTEND_URL || "https://spliting-frontend.vercel.app";
 app.use(cors({ origin: frontendOrigin }));
 app.use(fileUpload({ useTempFiles: true, tempFileDir: '/tmp/' }));
 
