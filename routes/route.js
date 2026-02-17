@@ -8,6 +8,8 @@ const {createLedger,getUserLedgers,getLedgerDetails}=require("../controllers/cre
 const {addExpense,getLedgerTransactions}=require("../controllers/expence");
 const {getDashboardStats}=require("../controllers/dashboard");
 const { getLedgerActivity } = require("../controllers/activity/getLedgerActivity");
+const { sendResetLink } = require("../controllers/forgetPassword");
+const { resetPassword } = require("../controllers/resetPassword");
 
 
 
@@ -26,4 +28,7 @@ router.post("/addexpense",addExpense);
 router.get("/ledger/:ledgerId/transactions",getLedgerTransactions);
 
 router.get("/activity/ledger/:ledger_id", getLedgerActivity);
+router.post("/forgot-password", sendResetLink);
+router.post("/reset-password", resetPassword);
+
 module.exports=router;
