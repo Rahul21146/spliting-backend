@@ -2,7 +2,7 @@ const express=require("express");
 const router=express.Router();
 
 const {register}=require("../controllers/signup");
-const {login}=require("../controllers/login");
+const {login,googleLogin}=require("../controllers/login");
 const {getProfile}=require("../controllers/profile");
 const {createLedger,getUserLedgers,getLedgerDetails}=require("../controllers/createLedger");
 const {addExpense,getLedgerTransactions}=require("../controllers/expence");
@@ -16,7 +16,7 @@ const { resetPassword } = require("../controllers/resetPassword");
 router.get("/dashboard/stats", getDashboardStats);
 router.post("/register", register);
 router.post("/login", login);
-
+router.post("/google", googleLogin);
 router.get("/profile", getProfile);
 
 
