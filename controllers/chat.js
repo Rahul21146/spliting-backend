@@ -1,4 +1,4 @@
-const ChatMessage = require("../models/ChatMessage");
+const ChatMessage = require("../models/chatMessage");
 
 exports.getLedgerMessages = async (req, res) => {
   try {
