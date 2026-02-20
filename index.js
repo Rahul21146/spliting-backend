@@ -53,7 +53,7 @@ const { Server } = require("socket.io");
 const jwt = require("jsonwebtoken");
 
 const LedgerMember = require("./models/LedgerMember");
-const ChatMessage = require("./models/ChatMessage");
+const ChatMessage = require("./models/chatMessage");
 
 const app = express();
 
