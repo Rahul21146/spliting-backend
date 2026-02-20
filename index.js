@@ -60,7 +60,7 @@ const app = express();
 app.use(express.json());
 
 const frontendOrigin =
-  process.env.FRONTEND_URL || "http://localhost:3000";
+  process.env.FRONTEND_URL || "https://spliting-frontend.vercel.app";
 
 app.use(cors({ origin: frontendOrigin }));
 app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp/" }));
